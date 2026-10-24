@@ -1,0 +1,152 @@
+/* 下のページ（研究所について・プロフィール・活動実績・海外・ご依頼・個人情報）だけで使う形
+   色・文字・ヘッダー・フッターは style.css。ここは pg- で始まるクラスだけ */
+
+/* いま見ているページ（ナビ） */
+.nav a[aria-current="page"]{color:var(--cobalt-d);font-weight:700}
+.nav a[aria-current="page"]::after{transform:scaleX(1)}
+
+/* ページの見出し */
+.pg-head{background:var(--gray-1);padding:64px 0 56px}
+.pg-head h1{font-size:40px;letter-spacing:.12em;line-height:1.35}
+.pg-head .pg-lead{margin:20px 0 0;max-width:38em;color:var(--sumi)}
+.pg-head .pg-sub{margin:0 0 10px;font-size:14px;color:var(--gray-4);letter-spacing:.1em}
+
+/* 本文の段 */
+.pg-sec{padding:80px 0}
+.pg-sec+.pg-sec{border-top:1px solid var(--line)}
+.pg-sec h2{margin-bottom:32px}
+.pg-sec h3{font-family:var(--mincho);font-weight:800;color:var(--ai);font-size:21px;letter-spacing:.08em;margin:0 0 12px;line-height:1.5}
+.pg-cols{display:grid;grid-template-columns:240px 1fr;gap:56px;align-items:start}
+.pg-cols>h2{margin:0}
+.pg-prose{max-width:40em}
+.pg-prose p{margin:0 0 1.2em}
+.pg-note{font-size:14px;color:var(--gray-4)}
+.pg-sign{margin-top:28px;font-family:var(--mincho);font-weight:800;color:var(--ai);letter-spacing:.15em;text-align:right;max-width:40em}
+
+/* 表のような並び（概要・所在地など） */
+.pg-dl{display:grid;grid-template-columns:9em 1fr;margin:0;border-top:1px solid var(--line)}
+.pg-dl dt,.pg-dl dd{margin:0;padding:16px 0;border-bottom:1px solid var(--line)}
+.pg-dl dt{font-weight:700;color:var(--ai)}
+.pg-dl ul{margin:0;padding-left:1.2em}
+.pg-dl rt{font-size:12px;color:var(--gray-4);letter-spacing:.1em}
+
+/* 年ごとの並び（職歴・委員歴） */
+.pg-years{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.pg-years li{display:grid;grid-template-columns:8.5em 1fr;gap:24px;padding:14px 0;border-bottom:1px solid var(--line)}
+.pg-years time{font-family:var(--latin);font-weight:500;color:var(--cobalt-d);letter-spacing:.04em;font-variant-numeric:tabular-nums}
+.pg-years b{font-weight:700}
+.pg-years small{display:block;font-size:14px;color:var(--gray-4)}
+.pg-years .pg-now time{font-weight:700}
+
+/* 名前とプロフィールの写真 */
+.pg-person{display:grid;grid-template-columns:1fr 280px;gap:56px;align-items:start}
+.pg-name{font-family:var(--mincho);font-weight:800;color:var(--ai);font-size:48px;letter-spacing:.12em;line-height:1.3;margin:0}
+.pg-name rt{font-family:var(--goth);font-weight:400;font-size:14px;letter-spacing:.3em;color:var(--gray-4)}
+.pg-roles{list-style:none;margin:24px 0 0;padding:0}
+.pg-roles li{padding:6px 0;border-bottom:1px solid var(--line)}
+
+/* 写真の仮の枠（写真が届くまで） */
+.pg-ph{display:grid;place-items:center;aspect-ratio:3/4;background:#dde3eb;color:#4c5663;font-size:14px;text-align:center;padding:12px}
+.pg-ph.pg-wide{aspect-ratio:4/3}
+
+/* 2つに分けた並び（著書など） */
+.pg-two{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.pg-books{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.pg-books li{padding:12px 0;border-bottom:1px solid var(--line)}
+.pg-books small{display:block;font-size:14px;color:var(--gray-4)}
+
+/* 活動実績：内訳の横棒（白地用） */
+.pg-bars{list-style:none;margin:0;padding:0;max-width:640px}
+.pg-bars li{display:grid;grid-template-columns:8.5em 1fr 3.5em;align-items:center;gap:14px;padding:7px 0;font-size:14px}
+.pg-bar{height:14px;background:var(--gray-1);border-radius:0 4px 4px 0;overflow:hidden}
+.pg-bar i{display:block;height:100%;width:var(--w);background:var(--cobalt);border-radius:0 4px 4px 0}
+.pg-bv{text-align:right;font-family:var(--latin);font-weight:500;color:var(--sumi)}
+
+/* 活動実績：しぼりこみ */
+.pg-filter{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:end;margin:0 0 32px;padding:20px 24px;background:var(--gray-1)}
+.pg-filter fieldset{border:0;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.pg-filter legend,.pg-filter label{font-size:14px;color:var(--gray-4);margin-bottom:6px;padding:0;display:block}
+.pg-filter button{min-height:44px;padding:0 16px;font:inherit;font-size:14px;border:1px solid #b9c4d3;background:#fff;color:var(--sumi);border-radius:2px;cursor:pointer}
+.pg-filter button[aria-pressed="true"]{background:var(--cobalt-d);border-color:var(--cobalt-d);color:#fff}
+.pg-filter button[aria-pressed="true"]::before{content:"✓ "}
+.pg-filter select{min-height:44px;font:inherit;font-size:16px;padding:0 12px;border:1px solid #b9c4d3;border-radius:2px;background:#fff;color:var(--sumi)}
+.pg-count{font-size:14px;color:var(--gray-4);margin:0 0 8px}
+
+/* 活動実績：一覧 */
+.pg-month{font-family:var(--mincho);font-weight:800;color:var(--ai);font-size:19px;letter-spacing:.1em;margin:36px 0 4px}
+.pg-acts{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.pg-acts li{display:grid;grid-template-columns:7.5em 6em 1fr 8em;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:16px;align-items:baseline}
+.pg-acts time{font-family:var(--latin);font-weight:500;color:var(--cobalt-d);font-variant-numeric:tabular-nums}
+.pg-acts .pg-pref{color:var(--gray-4);font-size:14px}
+.pg-acts .pg-kind{font-size:14px;color:var(--gray-4);text-align:right}
+.pg-msg{padding:24px;background:var(--gray-1)}
+
+/* 海外：国ごと */
+.pg-country{display:grid;grid-template-columns:1fr 360px;gap:56px;align-items:start;scroll-margin-top:24px}
+.pg-country h2{margin-bottom:8px}
+.pg-country .pg-when{font-family:var(--latin);font-weight:500;color:var(--cobalt-d);margin:0 0 24px;letter-spacing:.04em}
+
+/* 活動実績：月ごとに折りたたむ */
+.pg-fold{border-bottom:1px solid var(--line)}
+.pg-fold:first-child{border-top:1px solid var(--line)}
+.pg-fold>summary.pg-month{margin:0;min-height:56px;display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;list-style:none;padding:0 4px}
+.pg-fold>summary::-webkit-details-marker{display:none}
+.pg-fold>summary::after{content:"";width:10px;height:10px;border-right:2px solid var(--cobalt-d);border-bottom:2px solid var(--cobalt-d);transform:rotate(45deg) translate(-3px,-3px);transition:transform .2s}
+.pg-fold[open]>summary::after{transform:rotate(-135deg) translate(-3px,-3px)}
+.pg-fold>summary:hover{background:var(--gray-1)}
+.pg-fold>summary:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
+.pg-fold .pg-acts{border-top:1px solid var(--line);margin-bottom:24px}
+.pg-fold .pg-acts li:last-child{border-bottom:0}
+
+/* ご依頼：流れ（本当の順番なので番号を付ける） */
+.pg-steps{list-style:none;margin:0;padding:0;counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--cobalt)}
+.pg-steps li{counter-increment:s;padding:24px 28px 0 0}
+.pg-steps li::before{content:counter(s);display:block;font-family:var(--latin);font-weight:300;font-size:40px;line-height:1;color:var(--cobalt-d);margin-bottom:12px}
+.pg-steps b{display:block;font-family:var(--mincho);font-weight:800;color:var(--ai);font-size:19px;margin-bottom:6px}
+.pg-steps p{margin:0;font-size:16px}
+.pg-check{margin:0;padding-left:1.4em}
+.pg-check li{padding:4px 0}
+.pg-go{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;margin-top:40px}
+
+@media (max-width:960px){
+  .pg-head{padding:40px 0 36px}
+  .pg-head h1{font-size:29px}
+  .pg-sec{padding:56px 0}
+  .pg-cols,.pg-person,.pg-two,.pg-country{grid-template-columns:1fr;gap:28px}
+  .pg-person .pg-ph{max-width:240px}
+  .pg-name{font-size:38px}
+  .pg-dl{grid-template-columns:1fr}
+  .pg-dl dt{padding-bottom:0;border-bottom:0}
+  .pg-dl dd{padding-top:4px}
+  .pg-years li{grid-template-columns:1fr;gap:2px}
+  .pg-acts li{grid-template-columns:7em 1fr;gap:2px 12px}
+  .pg-acts .pg-pref{grid-column:2;grid-row:1}
+  .pg-acts span:nth-of-type(2){grid-column:1/-1}
+  .pg-acts .pg-kind{grid-column:1/-1;text-align:left}
+  .pg-bars li{grid-template-columns:7.5em 1fr 3em}
+  .pg-filter{padding:16px}
+  .pg-steps{grid-template-columns:1fr;border-top:0;border-left:2px solid var(--cobalt)}
+  .pg-steps li{padding:0 0 24px 20px}
+  .pg-country .pg-ph{max-width:360px}
+}
+@media (prefers-reduced-motion:reduce){.pg-bar i{transition:none}}
+.pg-prose h3{margin-top:40px}
+.pg-prose h3:first-child{margin-top:0}
+
+/* ===== 研究所について v2：トップと同じ見せ方 ===== */
+.pg-h1{font-family:var(--mincho);font-weight:800;color:var(--ai);font-size:54px;white-space:nowrap;letter-spacing:.12em;line-height:1.25;margin:0}
+.pg-hero .lead{margin-top:40px}
+.pg-photo{position:relative;overflow:visible}
+.pg-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.pg-quote{max-width:40em;margin:0 0 64px;font-family:var(--mincho);font-weight:600;font-size:19px;line-height:2.2;letter-spacing:.06em;border-left:2px solid var(--cobalt);padding-left:32px}
+.pg-quote p{margin:0 0 1em}
+.pg-quote .pg-sign{margin:24px 0 0;font-weight:800;text-align:left}
+.band-dark .pg-dl{border-color:#2b3c57}
+.band-dark .pg-dl dt,.band-dark .pg-dl dd{border-color:#2b3c57}
+.band-dark .pg-dl dt{color:#a9c3ff}
+.band-dark .pg-dl dd{color:#e8eef6}
+.band-dark .pg-dl rt{color:#a9b7c9}
+@media (max-width:960px){
+  .pg-h1{font-size:40px}
+  .pg-quote{font-size:16px;padding-left:20px;margin-bottom:40px}
+}
