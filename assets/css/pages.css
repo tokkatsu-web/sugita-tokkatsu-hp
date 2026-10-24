@@ -150,3 +150,48 @@
   .pg-h1{font-size:40px}
   .pg-quote{font-size:16px;padding-left:20px;margin-bottom:40px}
 }
+
+/* ===== 研究所について v3：トップのスタイルにさらに寄せる ===== */
+.pg3-photo{align-self:end}
+.pg3-photo img{filter:grayscale(1) contrast(1.05);aspect-ratio:3/4;object-fit:cover;object-position:50% 20%}
+.pg3-intent{display:grid;grid-template-columns:240px 1fr;gap:48px;align-items:start}
+.pg3-intent h2{margin:0}
+.pg3-tate{writing-mode:vertical-rl;font-family:var(--mincho);font-weight:600;font-size:21px;line-height:2.3;letter-spacing:.14em;
+  height:27em;margin:0 0 0 auto;color:var(--sumi);border-right:1px solid var(--cobalt);padding-right:28px}
+.pg3-tate p{margin:0 0 0 1.4em}
+.pg3-tate .pg-sign{margin:0;padding-top:12em;font-weight:800;color:var(--ai);text-align:left;max-width:none}
+@media (max-width:960px){
+  .pg3-intent{grid-template-columns:1fr;gap:28px}
+  .pg3-tate{writing-mode:horizontal-tb;height:auto;font-size:17px;line-height:2.1;letter-spacing:.06em;border-right:0;border-left:1px solid var(--cobalt);padding:0 0 0 20px;margin:0}
+  .pg3-tate p{margin:0 0 1em}
+  .pg3-tate .pg-sign{padding-top:8px}
+}
+
+/* ===== v3 の見せ方を下のページ全部に ===== */
+.hero.pg3-hero{grid-template-columns:1fr 300px;min-height:560px;padding-bottom:120px}
+.pg3-hero .hero-panel{width:calc(34% + (100vw - 100%)/2)}
+.pg3-hero .catch{justify-self:center}
+.pg3-hero h1 .n{white-space:nowrap}
+.pg3-person h2 rt{font-family:var(--goth);font-weight:400;font-size:14px;letter-spacing:.3em;color:var(--gray-4)}
+.pg3-person h2{font-size:40px}
+.band-dark .pg3-dark.pg-years,.band-dark .pg3-dark.pg-years li{border-color:#2b3c57}
+.band-dark .pg3-dark time{color:var(--gold-l)}
+.band-dark .pg3-dark b{color:#fff;font-weight:700}
+.band-dark .pg3-dark small,.band-dark p.pg3-dark{color:#cfd9e6}
+.band-dark .pg3-dark.pg-bars .pg-bar{background:#16243a}
+.band-dark .pg3-dark.pg-bars .pg-bar i{background:#3d6ae6}
+.band-dark .pg3-dark.pg-bars li{color:#e8eef6}
+.band-dark .pg3-dark .pg-bv{color:#cfd9e6}
+.pg3-when{font-family:var(--latin);font-weight:300;font-size:40px;line-height:1;color:var(--cobalt-d);margin:0 0 12px;letter-spacing:.02em}
+.pg3-country .pg-country{align-items:center}
+.pg3-big li{font-size:19px;font-family:var(--mincho);font-weight:600;padding:10px 0;border-bottom:1px solid var(--line);list-style:none}
+.pg3-big{padding:0;border-top:1px solid var(--line)}
+.band-blue .pg-check li{color:#fff}
+@media (max-width:960px){
+  .hero.pg3-hero{grid-template-columns:1fr;min-height:0;padding-bottom:64px}
+  .pg3-hero .hero-panel{width:100%}
+  .pg3-hero .catch{justify-self:start}
+  .pg3-person h2{font-size:32px}
+  .pg3-when{font-size:32px}
+  .pg3-big li{font-size:17px}
+}
