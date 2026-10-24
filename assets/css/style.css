@@ -496,3 +496,6 @@ body{overflow-x:clip}
 
 /* ===== スマホでロゴの「杉田洋」が2行に折れないように ===== */
 .brand.t6-logo .t6-n,.brand.t6-logo .t6-s{white-space:nowrap}
+
+/* ===== 著書が7冊になったので、PC は7列に ===== */
+@media (min-width:961px){.covers{grid-template-columns:repeat(7,1fr);gap:28px 18px}}
