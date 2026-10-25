@@ -533,3 +533,124 @@ rt{ruby-align:center;letter-spacing:.05em!important}
 /* ふりがな：名前と同じ明朝で、細く・少し字間をあけて（2026-10-25） */
 h1 rt,.pg-name rt,.pg3-person h2 rt,.pg-dl rt{font-family:var(--mincho)!important;font-weight:500!important;letter-spacing:.12em!important;color:var(--gray-4)}
 h1 rt{font-size:14px}
+
+/* =====================================================================
+   スマホ（600px 以下）：字を詰め、余白を減らし、写真を1画面にしない（2026-10-25）
+   本文は 16px のまま（UD）。行の間・余白・見出しを小さくしてスクロールを減らす
+   ===================================================================== */
+@media (max-width:600px){
+  body{line-height:1.75}
+  .w,.top{padding-left:18px;padding-right:18px}
+  /* 飾りの線文字（TOKKATSU・JAPAN・国名など）は、字にかぶるのでスマホでは出さない */
+  .wordmark,.t8-bg{display:none}
+  /* 段の余白と見出し */
+  .sec,.pg-sec{padding:40px 0}
+  .sec h2,.pg-sec h2,h2{font-size:21px;margin-bottom:18px;line-height:1.5}
+  .sec h2::before,.pg-sec h2::before{width:20px}
+  .pg-cols{gap:14px}
+  .pg-cols>h2{font-size:21px}
+  /* 上の帯（ロゴとメニュー） */
+  .top{padding-top:12px;padding-bottom:4px;row-gap:6px}
+  .brand.t6-logo{transform:scale(.9);transform-origin:left center}
+  /* ページの最初の画面：見出しを小さく、余白を少なく */
+  .kao-word,.kao-gallery,.kao-books,.kao-quiet,.kao-world,.kao-map,.kao-media,.kao-req,.kao-path{padding-top:28px;padding-bottom:32px}
+  .kao-word h1,.kao-path h1,.kao-map h1,.kao-world h1,.kao-books h1,.kao-gallery h1,.kao-media h1,.kao-req h1{font-size:30px;margin-bottom:6px}
+  .kao-word h1{font-size:16px}
+  .kao-word blockquote,.kao-word-photo blockquote,.kao-word blockquote.kao-en{font-size:21px;line-height:1.7}
+  .kao-word-photo{gap:22px}
+  .kao-word-photo>div:first-child,.kao-bh,.kao-quiet .w{padding-left:14px}
+  .kao-sign{margin-top:12px}
+  .kao-fig{width:72%;max-width:280px}
+  .kao-ph,.kao-fig img{box-shadow:8px 8px 0 -1px var(--cobalt)}
+  .kao-fig figcaption{margin-top:16px}
+  .kao-path .kao-sub,.kao-world .kao-sub,.kao-media .kao-sub{margin-bottom:20px;font-size:14px}
+  .kao-map .kao-lead{font-size:18px}
+  .kao-map .kao-lead em{font-size:48px}
+  .kao-map .w{gap:20px}
+  .kao-req p{font-size:16px}
+  .kao-req .btn{min-height:56px;font-size:16px;padding:0 28px}
+  .kao-gallery .kao-bh,.kao-books .kao-bh{margin-bottom:20px;gap:10px}
+  /* トップの最初の画面：名前を小さめに、写真を小さく（1画面を占めない） */
+  .hero{padding:16px 18px 24px;gap:16px}
+  .hero .role{font-size:14px;margin-bottom:12px}
+  h1 .n{font-size:52px}
+  h1 .l{font-size:15px;margin-top:8px}
+  .hero .lead{margin-top:16px}
+  .catch{font-size:17px;line-height:1.7;padding-left:12px}
+  .catch small{font-size:14px;margin-top:8px}
+  .photo.t7-fig{width:46%;max-width:180px;margin:0 0 -24px auto;justify-self:end}
+  .hero-panel{height:34%}
+  /* 年表（トップ）：アイコンの箱はスマホでは出さない。写真だけ小さく */
+  .path .t5-ph.t10-ic{display:none}
+  .path .t5-ph.t6-has{max-width:160px}
+  .path{gap:12px}
+  .path .kao-now{position:static;margin:0;grid-column:2/-1}
+  .path-note{margin-top:20px}
+  /* 理念の3つ */
+  #values .val{padding:14px 0}
+  .val .t8-w{font-size:24px}
+  /* 委員歴など、年ごとの並び */
+  .pg-years li{padding:10px 0;gap:0}
+  .pg-years small{font-size:14px}
+  .pg-roles li{padding:4px 0}
+  /* 本棚：3冊ずつ。書名は短く、出版社などは小さく */
+  .pg-shelf{grid-template-columns:repeat(3,1fr)!important;row-gap:28px}
+  .pg-shelf .cover{padding:0 6px}
+  .pg-shelf .cover .art::after{left:-6px;right:-6px}
+  .pg-shelf .cover .cap{margin-top:14px}
+  .pg-shelf .cover .cap b{font-size:14px;line-height:1.45}
+  .pg-shelf .cover .cap small{display:none}
+  .pg-shelf .pg-vol{font-size:14px;padding:0 5px}
+  .pg-nofig .fb b{font-size:15px}
+  .pg-nofig .fb small{font-size:14px;margin-left:8px}
+  /* 依頼の帯・フッター */
+  .band-blue .req,.req{gap:18px}
+  #request.sec{padding:32px 0}
+  footer{padding:32px 0 88px}
+  footer .w{grid-template-columns:1fr 1fr;gap:0 16px}
+  footer .w>div:first-child,footer .c{grid-column:1/-1}
+  footer .w>div:first-child{margin-bottom:8px}
+  footer .nm{font-size:17px}
+  footer p{margin:4px 0 0}
+  /* 活動実績 */
+  .pg-fold>summary.pg-month{min-height:56px}
+  .pg-count.ft-result{margin-top:16px;padding-top:12px}
+  /* 海外の国ごとの段 */
+  .pg-country{gap:16px}
+  .pg-country .pg-ph{max-width:240px}
+  .pg3-when{font-size:26px}
+  /* 写真のページ */
+  .kao-mosaic{gap:8px}
+}
+@media (max-width:600px){
+  .brand.t6-logo{transform:none;min-height:44px}
+  .photo.t7-fig{width:auto;max-width:none}
+  .photo.t7-fig img{height:210px;width:auto;margin-left:auto}
+  .covers{grid-template-columns:repeat(3,1fr)!important;gap:20px 12px!important}
+  .covers .cover .cap small{display:none}
+  .covers .cover .cap b{font-size:14px;line-height:1.45}
+  .shelf-note{font-size:14px}
+}
+/* トップの最初の画面（スマホ）：キャッチコピーと写真を横に並べる */
+@media (max-width:600px){
+  .hero{grid-template-columns:1fr 128px;column-gap:12px;align-items:end;padding-bottom:0}
+  .hero .who{grid-column:1/-1}
+  .hero .catch{grid-column:1;grid-row:2;align-self:center;margin:0 0 28px;font-size:16px;letter-spacing:.06em}
+  .hero .catch small{font-size:14px;line-height:1.7;letter-spacing:.04em}
+  .hero .photo.t7-fig{grid-column:2;grid-row:2;margin:0;align-self:end;justify-self:center}
+  .hero .photo.t7-fig img{height:220px;width:auto;margin:0}
+  .hero .hero-panel{top:auto;bottom:0;left:auto;right:0;width:150px;height:200px}
+}
+@media (max-width:600px){
+  .hero{grid-template-columns:1fr 112px}
+  .hero .catch{font-size:15px;letter-spacing:.02em}
+  .hero .catch small{letter-spacing:0}
+  .hero .photo.t7-fig img{height:200px}
+  .hero .hero-panel{width:132px;height:184px}
+}
+@media (max-width:960px){
+  .path .step.kao-cur{position:relative}
+  .path .step.kao-cur .kao-now{position:absolute;left:30px;top:30px;margin:0}
+  .path .step.kao-cur{padding-bottom:22px}
+}
+@media (max-width:960px){.path .step.kao-cur .kao-now{left:auto;top:auto;position:static;grid-column:2;grid-row:2;margin-top:-6px}.path .step.kao-cur > p{grid-row:1;grid-column:3}}
