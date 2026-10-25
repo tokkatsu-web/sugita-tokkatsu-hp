@@ -510,3 +510,7 @@ body{overflow-x:clip}
   .nav.t7-nav a::after{left:12px;right:12px}
 }
 @media (max-width:359px){.nav.t7-nav a{white-space:normal;text-align:center;line-height:1.3}}
+
+/* ===== 世界地図（濃紺の帯）：国境の線が見えるように ===== */
+.t9-c{stroke:#3d5172;stroke-width:.8}
+.path-note{max-width:none}

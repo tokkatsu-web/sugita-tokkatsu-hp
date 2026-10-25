@@ -42,7 +42,11 @@
   function monthsHTML(groups, filtered) {
     return groups.map(function (g, i) {
       var open = filtered || i === groups.length - 1;
-      return '<details' + (open ? ' open' : '') + ' class="pg-fold"><summary class="pg-month">' + g.label +
+      var m = /^(\d{4})年(\d{1,2})月$/.exec(g.label) || [, '', g.label];
+      var ticks = g.items.map(function () { return '<i></i>'; }).join('');
+      return '<details' + (open ? ' open' : '') + ' class="pg-fold" data-ym="' + g.label + '"><summary class="pg-month">' +
+        '<span class="pg-mn"><b>' + m[2] + '</b>月</span><span class="pg-my">' + m[1] + '</span>' +
+        '<span class="pg-ticks" aria-hidden="true">' + ticks + '</span><span class="pg-mc">' + g.items.length + '回</span>' +
         '</summary><ul class="pg-acts">' + g.items.map(function (o) {
           return '<li><time>' + esc(dateText(o['日付'])) + '</time><span class="pg-pref">' + esc(o['都道府県']) +
             '</span><span>' + esc(o['公開する内容']) + '</span><span class="pg-kind">' + esc(o['種別']) + '</span></li>';
