@@ -530,3 +530,6 @@
 /* ふりがな：字の真ん中にそろえる（かなを散らさない） */
 ruby{ruby-align:center}
 rt{ruby-align:center;letter-spacing:.05em!important}
+/* ふりがな：名前と同じ明朝で、細く・少し字間をあけて（2026-10-25） */
+h1 rt,.pg-name rt,.pg3-person h2 rt,.pg-dl rt{font-family:var(--mincho)!important;font-weight:500!important;letter-spacing:.12em!important;color:var(--gray-4)}
+h1 rt{font-size:14px}
