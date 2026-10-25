@@ -527,3 +527,6 @@
 }
 @media (prefers-reduced-motion:reduce){.pg-filter .ft-choice{transition:none}}
 @media (forced-colors:active){.pg-filter .ft-choice[aria-pressed="true"]{outline:2px solid Highlight;outline-offset:-3px}.pg-filter .ft-select{appearance:auto}.ft-select-wrap::after{display:none}}
+/* ふりがな：字の真ん中にそろえる（かなを散らさない） */
+ruby{ruby-align:center}
+rt{ruby-align:center;letter-spacing:.05em!important}
