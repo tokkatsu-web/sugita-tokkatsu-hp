@@ -275,3 +275,8 @@
   .kao-years b{font-size:29px}
   .kao-years span{font-size:15px;padding:0}
 }
+/* 著書の一覧：書名を押すと本のページへ */
+.pg-books .pg-blink{display:block;min-height:44px;padding:2px 0;color:var(--sumi);text-decoration:none}
+.pg-books .pg-blink .pg-bt{color:var(--cobalt-d);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.pg-books .pg-blink:hover .pg-bt{text-decoration-thickness:2px}
+.pg-books .pg-blink small{color:var(--gray-4)}
