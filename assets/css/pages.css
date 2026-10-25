@@ -654,3 +654,19 @@ h1 rt{font-size:14px}
   .path .step.kao-cur{padding-bottom:22px}
 }
 @media (max-width:960px){.path .step.kao-cur .kao-now{left:auto;top:auto;position:static;grid-column:2;grid-row:2;margin-top:-6px}.path .step.kao-cur > p{grid-row:1;grid-column:3}}
+
+/* ===== 上のメニューの固定（PC はいつも、スマホは戻るときだけ。nav.js） ===== */
+
+
+header.top{transition:transform .28s cubic-bezier(.2,.7,.2,1)}
+header.top.nav-hide{transform:translateY(-100%)}
+@media (min-width:961px){html{scroll-padding-top:96px}}
+@media (max-width:960px){html{scroll-padding-top:12px}}
+@media (prefers-reduced-motion:reduce){header.top{transition:none}header.top.nav-hide{transform:none}}
+
+/* 帯そのものを画面いっぱいに（中身は 1200px の中にそろえる） */
+header.top{position:sticky;top:0;z-index:30;background:#fff;max-width:none;border-bottom:1px solid transparent;transition:transform .28s cubic-bezier(.2,.7,.2,1),border-color .2s;padding-left:max(40px,calc((100% - 1200px)/2 + 40px));padding-right:max(40px,calc((100% - 1200px)/2 + 40px))}
+header.top.nav-on{border-bottom-color:#e3e7ed}
+@media (max-width:960px){header.top{padding-left:20px;padding-right:20px}}
+@media (max-width:600px){header.top{padding-left:18px;padding-right:18px}}
+@media (prefers-reduced-motion:reduce){header.top{transition:none}}
