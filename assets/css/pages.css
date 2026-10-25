@@ -318,3 +318,17 @@
 .pg-nofig .pg-vol{background:var(--gold-l);color:#0f1b2d;left:24px;right:auto;bottom:10px}
 .pg-nofig .fb small:only-child{margin:0}
 .pg-nofig .pg-vol{top:10px;bottom:auto}
+
+/* ===== 研究所について：言葉の右に、エジプトで教える写真 ===== */
+.kao-word-photo{display:grid;grid-template-columns:1fr 440px;gap:64px;align-items:center}
+.kao-word-photo blockquote{font-size:38px;max-width:13em}
+.kao-fig{margin:0}
+.kao-ph{aspect-ratio:4/3;background:#dde3eb;color:#4c5663;display:grid;place-items:center;text-align:center;font-size:15px;line-height:1.8;box-shadow:20px 20px 0 -1px var(--cobalt)}
+.kao-fig img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;box-shadow:20px 20px 0 -1px var(--cobalt)}
+.kao-fig figcaption{margin-top:30px;font-size:14px;color:var(--gray-4)}
+@media (max-width:960px){
+  .kao-word-photo{grid-template-columns:1fr;gap:40px}
+  .kao-word-photo blockquote{font-size:27px}
+  .kao-ph,.kao-fig img{box-shadow:12px 12px 0 -1px var(--cobalt);width:calc(100% - 12px)}
+}
+.kao-word-photo blockquote{font-size:36px;max-width:none}
