@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Inter+Tight:wght@300;500;700&family=Shippori+Mincho+B1:wght@500;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=202610251611">
-<link rel="stylesheet" href="assets/css/pages.css?v=202610251611">
+<link rel="stylesheet" href="assets/css/style.css?v=202610251617">
+<link rel="stylesheet" href="assets/css/pages.css?v=202610251617">
 <script>if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&"IntersectionObserver" in window)document.documentElement.classList.add("js")</script>
 </head>
 <body>
@@ -23,8 +23,17 @@
 </header>
 
 <main>
-<section class="pg-head"><div class="w"><h1>写真</h1><p class="pg-lead">講演や授業、海外での活動の様子を載せていきます。</p></div></section>
-<section class="pg-sec"><div class="w"><p>写真は準備中です。</p></div></section>
+<section class="kao-gallery"><div class="w">
+  <div class="kao-bh"><h1>写真</h1><p>講演や授業、海外での活動の様子です。お写真が届いたものから順に載せていきます。</p></div>
+  <!-- 要確認：写真は先生から。子どもの顔がはっきり写るものは載せない・撮った人の許可 -->
+  <div class="kao-mosaic">
+    <figure class="kao-m1"><img src="img/2024_taidan.jpg" alt="映画『小学校』の監督と対談する杉田先生" loading="lazy"><figcaption>2024年 映画『小学校』の監督と対談　写真：小学館</figcaption></figure>
+    <figure class="kao-m2"><div class="kao-ph">講演の様子<br>（準備中）</div></figure>
+    <figure class="kao-m3"><div class="kao-ph">学校での指導<br>（準備中）</div></figure>
+    <figure class="kao-m4"><div class="kao-ph">エジプトで<br>（準備中）</div></figure>
+    <figure class="kao-m5"><div class="kao-ph">モンゴルで<br>（準備中）</div></figure>
+  </div>
+</div></section>
 </main>
 <section class="sec band-blue t8-host" id="request"><svg class="t8-bg" viewBox="0 0 1300 200" aria-hidden="true"><defs><filter id="t8-REQUEST" x="-2%" y="-10%" width="104%" height="120%"><feMorphology in="SourceAlpha" operator="dilate" radius="1.2" result="d"/><feComposite in="d" in2="SourceAlpha" operator="out" result="o"/><feFlood flood-color="#4767c0"/><feComposite in2="o" operator="in"/></filter></defs><text x="1300" y="170" text-anchor="end" filter="url(#t8-REQUEST)">REQUEST</text></svg>
   <div class="w req">
@@ -43,6 +52,6 @@
 </footer>
 
 <a class="tab" href="request.html">講演・研修のご依頼</a>
-<script src="assets/js/motion.js?v=202610251611"></script>
+<script src="assets/js/motion.js?v=202610251617"></script>
 </body>
 </html>

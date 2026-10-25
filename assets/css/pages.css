@@ -370,3 +370,43 @@
   .pg-fold .pg-acts li{grid-template-columns:4.6em 1fr;gap:4px 10px}
   .pg-acts .pg-kind{justify-self:start;grid-column:2}
 }
+
+/* ===== 写真：写真が主役（大小の写真を組み合わせる） ===== */
+.kao-gallery{padding:72px 0 96px}
+.kao-gallery h1{font-size:56px;letter-spacing:.12em;margin:0}
+.kao-mosaic{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:240px 240px;gap:16px}
+.kao-mosaic figure{margin:0;position:relative;overflow:hidden;background:#dde3eb}
+.kao-mosaic .kao-m1{grid-row:1/3}
+.kao-mosaic img{width:100%;height:100%;object-fit:cover;display:block}
+.kao-mosaic .kao-ph{height:100%;aspect-ratio:auto;box-shadow:none}
+.kao-mosaic figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 16px 12px;color:#fff;font-size:14px;background:linear-gradient(transparent,rgba(15,27,45,.85))}
+@media (max-width:960px){
+  .kao-gallery h1{font-size:40px}
+  .kao-mosaic{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .kao-mosaic .kao-m1{grid-column:1/-1;grid-row:auto;aspect-ratio:4/3}
+  .kao-mosaic figure{aspect-ratio:1/1}
+}
+/* ===== メディア：映画のエンドロールのように（濃紺・大きな年） ===== */
+.kao-media{padding:80px 0 88px}
+.kao-media h1{color:#fff;font-size:56px;letter-spacing:.12em;margin:0 0 8px}
+.kao-media .kao-sub{color:#a9b7c9;letter-spacing:.2em;margin:0 0 48px}
+.kao-credits{list-style:none;margin:0;padding:0;border-top:1px solid #2b3c57}
+.kao-credits li{display:grid;grid-template-columns:200px 1fr;gap:32px;align-items:baseline;padding:28px 0;border-bottom:1px solid #2b3c57}
+.kao-credits time{font-family:var(--latin);font-weight:300;font-size:48px;line-height:1;color:var(--gold-l)}
+.kao-credits time small{font-size:19px;color:#cfd9e6;margin-left:4px}
+.kao-credits b{display:block;font-family:var(--mincho);font-weight:800;font-size:25px;color:#fff;letter-spacing:.06em;line-height:1.5}
+.kao-credits span{display:block;color:#cfd9e6;margin-top:6px}
+@media (max-width:960px){
+  .kao-media h1{font-size:40px}
+  .kao-credits li{grid-template-columns:1fr;gap:8px;padding:20px 0}
+  .kao-credits time{font-size:32px}
+  .kao-credits b{font-size:19px}
+}
+.kao-gallery .kao-bh{display:flex;align-items:baseline;gap:32px;flex-wrap:wrap;margin-bottom:40px}.kao-gallery .kao-bh p{margin:0}
+/* 英語ページ用（ページごとの顔） */
+.kao-word blockquote.kao-en{font-family:var(--mincho);letter-spacing:.01em;line-height:1.45;font-size:40px}
+.kao-en-lead{max-width:48em;margin:24px 0 0}
+.kao-world .t9-lab{font-family:var(--latin);font-weight:500}
+@media (max-width:960px){.kao-word blockquote.kao-en{font-size:27px}}
+.kao-years span span{display:inline;padding:0;font-size:inherit;color:inherit}
+.kao-mosaic figcaption{background:rgba(15,27,45,.9);padding:10px 16px}
