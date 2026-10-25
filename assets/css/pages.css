@@ -195,3 +195,83 @@
   .pg3-when{font-size:32px}
   .pg3-big li{font-size:17px}
 }
+
+/* 縦書きの中の数字を立てる（横書きになるスマホでは何もしない） */
+.pg-tcy{text-combine-upright:all;-webkit-text-combine:horizontal}
+.pg-up{text-orientation:upright;letter-spacing:0}
+.catch .pg-tcy,.catch .pg-up{display:inline;padding:0!important}
+
+/* 設立の思い：縦書きは読みにくいので横書きに（2026-10-25） */
+.pg3-intent .pg3-yoko{margin:0;max-width:34em}
+
+/* ===== ページごとの顔（見本 v1 を全部入れる 2026-10-25） ===== */
+/* ① 研究所について：言葉が主役 */
+.kao-word{padding:96px 0 104px;background:#fff}
+.kao-word .pg-sub{font-size:14px;color:var(--gray-4);letter-spacing:.1em;margin:0 0 28px}
+.kao-word blockquote{margin:0;font-family:var(--mincho);font-weight:800;color:var(--ai);font-size:46px;line-height:1.65;letter-spacing:.08em;max-width:15em}
+.kao-word blockquote em{font-style:normal;color:var(--cobalt-d);background:linear-gradient(transparent 70%,#e8efff 70%)}
+.kao-word .kao-sign{margin:28px 0 0;font-family:var(--mincho);font-weight:800;color:var(--sumi);letter-spacing:.2em}
+.kao-word h1{font-size:19px;margin:0 0 40px;color:var(--ai);letter-spacing:.2em}
+/* ② プロフィール：年表が主役（濃紺） */
+.kao-path{background:var(--night);color:#e8eef6;padding:88px 0 96px}
+.kao-path h1{color:#fff;font-size:56px;letter-spacing:.12em;margin:0 0 8px}
+.kao-path .kao-sub{color:#a9b7c9;letter-spacing:.3em;font-size:16px;margin:0 0 56px}
+.kao-years{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);position:relative}
+.kao-years::before{content:"";position:absolute;left:0;right:0;top:78px;height:2px;background:linear-gradient(90deg,#2b3c57,var(--gold-l))}
+.kao-years b{display:block;font-family:var(--latin);font-weight:300;font-size:56px;line-height:1;color:#fff;letter-spacing:-.01em}
+.kao-years i{display:block;width:14px;height:14px;border-radius:50%;background:var(--night);border:2px solid var(--gold-l);margin:14px 0 18px}
+.kao-years li:last-child i{background:var(--gold-l)}
+.kao-years span{font-size:15px;line-height:1.7;color:#cfd9e6;display:block;padding-right:16px}
+/* ③ 活動実績：地図が主役 */
+.kao-map{background:var(--night);color:#e8eef6;padding:72px 0 80px}
+.kao-map .w{display:grid;grid-template-columns:1fr 1.25fr;gap:56px;align-items:center}
+.kao-map h1{color:#fff;font-size:56px;letter-spacing:.12em;margin:0 0 24px}
+.kao-map .kao-lead{font-family:var(--mincho);font-weight:800;font-size:25px;line-height:1.7;color:#fff;margin:0 0 16px}
+.kao-map .kao-lead em{font-style:normal;font-family:var(--latin);font-weight:300;font-size:72px;color:var(--gold-l);vertical-align:-10px;margin:0 6px}
+.kao-map p{color:#cfd9e6}
+/* ④ 海外：世界地図が主役 */
+.kao-world{background:var(--gray-1);padding:72px 0 64px}
+.kao-world h1{font-size:56px;letter-spacing:.12em;margin:0 0 8px}
+.kao-world .kao-sub{color:var(--gray-4);letter-spacing:.2em;margin:0 0 24px}
+.kao-world .t9-world{width:100%;height:auto;display:block}
+.kao-world .t9-c{fill:#cfd8e4;stroke:#cfd8e4}
+.kao-world .t9-on{fill:var(--cobalt)}
+.kao-world .t9-lab{stroke:none;paint-order:normal;fill:var(--ai);font-family:var(--mincho);font-weight:800;font-size:18px}
+.kao-world .t9-cap{fill:var(--ai)}
+/* ⑤ 著書：表紙が主役 */
+.kao-books{background:#fff;padding:72px 0 80px}
+.kao-books .kao-bh{display:flex;align-items:baseline;gap:32px;flex-wrap:wrap;margin-bottom:40px}.kao-books .kao-bh p{margin:0}
+.kao-books h1{font-size:56px;letter-spacing:.12em;margin:0 0 16px}
+.kao-books .cover .art{box-shadow:0 30px 40px -24px rgba(15,27,45,.45)}
+/* ⑥ ご依頼：ボタンが主役（青） */
+.kao-req{background:var(--cobalt-d);color:#fff;padding:88px 0}
+.kao-req .w{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:center}
+.kao-req h1{color:#fff;font-size:56px;letter-spacing:.12em;margin:0 0 20px}
+.kao-req p{margin:0;color:#e8efff}
+.kao-req .btn{background:#fff;color:var(--cobalt-d);min-height:72px;font-size:19px;padding:0 48px}
+.kao-req ol{list-style:none;padding:0;margin:28px 0 0;display:flex;gap:12px;flex-wrap:wrap}
+.kao-req ol li{border:1px solid rgba(255,255,255,.5);padding:8px 14px;font-size:15px}
+.kao-req ol li b{font-family:var(--latin);font-weight:500;margin-right:6px}
+/* ⑦ 個人情報：静かに */
+.kao-quiet{padding:72px 0 40px;border-bottom:1px solid var(--line)}
+.kao-quiet h1{font-size:32px;letter-spacing:.12em;margin:0 0 12px}
+@media (max-width:960px){
+  .kao-word blockquote{font-size:27px}
+  .kao-years{grid-template-columns:1fr;gap:18px}.kao-years::before{display:none}.kao-years b{font-size:36px}
+  .kao-map .w,.kao-req .w{grid-template-columns:1fr}
+  .kao-path h1,.kao-map h1,.kao-world h1,.kao-books h1,.kao-req h1{font-size:40px}
+  
+  }
+.kao-world .t9-world a:hover .t9-lab{fill:var(--cobalt-d)}
+.kao-map .tilemap{max-width:620px;margin-left:auto}
+.kao-go{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.kao-go a{display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border:1px solid var(--cobalt-d);color:var(--cobalt-d);text-decoration:none;font-weight:700;border-radius:2px;background:#fff}
+.kao-go a:hover{background:var(--cobalt-d);color:#fff}
+@media (max-width:960px){
+  .kao-path{padding:48px 0 56px}
+  .kao-years{gap:0;border-left:2px solid var(--gold-l);margin-left:4px}
+  .kao-years li{display:grid;grid-template-columns:4.2em 1fr;align-items:baseline;gap:12px;padding:12px 0 12px 18px;position:relative}
+  .kao-years i{position:absolute;left:-9px;top:20px;margin:0;width:14px;height:14px}
+  .kao-years b{font-size:29px}
+  .kao-years span{font-size:15px;padding:0}
+}
