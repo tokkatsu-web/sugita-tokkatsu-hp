@@ -280,3 +280,28 @@
 .pg-books .pg-blink .pg-bt{color:var(--cobalt-d);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
 .pg-books .pg-blink:hover .pg-bt{text-decoration-thickness:2px}
 .pg-books .pg-blink small{color:var(--gray-4)}
+
+/* ===== 著書：本棚（表紙が棚に立つ。白地に細い棚板と影だけ） ===== */
+.pg-shelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));column-gap:0;row-gap:56px;margin:0 0 72px}
+.pg-shelf .cover{padding:0 14px;position:relative}
+.pg-shelf .cover .art{box-shadow:0 18px 22px -16px rgba(15,27,45,.45)}
+/* 棚板：表紙の下に1本の線。となりの本の線とつながって、段ごとの棚になる */
+.pg-shelf .cover::before{content:"";position:absolute;left:0;right:0;top:calc((100% - var(--cap,0px)));height:0}
+.pg-shelf .cover .art::after{content:"";position:absolute;left:-14px;right:-14px;bottom:-9px;height:9px;
+  background:linear-gradient(180deg,#d9dfe7 0 1px,#eef1f5 1px,#fff);border-top:1px solid #c7cfda}
+.pg-shelf .cover .cap{margin-top:22px}
+.pg-shelf .cover .cap b{font-size:14px;line-height:1.6}
+.pg-shelf .pg-vol{position:absolute;right:6px;top:6px;z-index:2;font-style:normal;font-size:14px;font-weight:700;background:var(--cobalt-d);color:#fff;padding:2px 8px;border-radius:2px}
+.pg-shelf a.cover:hover .art{transform:translateY(-6px)}
+.pg-shelf a.cover .cap b{color:var(--cobalt-d);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.pg-shelf-h2{margin-top:8px}
+.pg-shelf-plain .cover .art{box-shadow:0 10px 16px -14px rgba(15,27,45,.35)}
+@media (max-width:960px){
+  .pg-shelf{grid-template-columns:repeat(2,1fr);row-gap:44px}
+  .pg-shelf .cover{padding:0 10px}
+  .pg-shelf .cover .art::after{left:-10px;right:-10px}
+}
+@media (min-width:961px){.pg-shelf{grid-template-columns:repeat(5,1fr)}.pg-shelf .cover{padding:0 22px}.pg-shelf .cover .art::after{left:-22px;right:-22px}}
+.pg-shelf .pg-vol{top:auto;bottom:8px}
+.kao-books{padding-bottom:16px}
+.pg-books-sec{padding-top:48px}
