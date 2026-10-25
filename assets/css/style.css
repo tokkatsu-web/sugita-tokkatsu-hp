@@ -499,3 +499,14 @@ body{overflow-x:clip}
 
 /* ===== 著書が7冊になったので、PC は7列に ===== */
 @media (min-width:961px){.covers{grid-template-columns:repeat(7,1fr);gap:28px 18px}}
+
+/* ===== スマホでもメニューを全部出す（ロゴの下に3つずつ2段） ===== */
+@media (max-width:960px){
+  .top{flex-wrap:wrap;row-gap:10px;padding-bottom:6px}
+  .nav.t7-nav{order:3;width:100%;display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+  .nav.t7-nav a:not(.en){display:inline-flex}
+  .nav.t7-nav a{padding:0 4px;min-height:44px;font-size:14px;letter-spacing:.02em;white-space:nowrap}
+  .nav.t7-nav a:nth-child(n+4){border-top:1px solid #e3e7ed}
+  .nav.t7-nav a::after{left:12px;right:12px}
+}
+@media (max-width:359px){.nav.t7-nav a{white-space:normal;text-align:center;line-height:1.3}}
