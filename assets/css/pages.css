@@ -410,3 +410,89 @@
 @media (max-width:960px){.kao-word blockquote.kao-en{font-size:27px}}
 .kao-years span span{display:inline;padding:0;font-size:inherit;color:inherit}
 .kao-mosaic figcaption{background:rgba(15,27,45,.9);padding:10px 16px}
+
+/* =====================================================================
+   金のしつらえ（見本 _mihon_gold_v1 の案B＋差し色。2026-10-25）
+   金の字は白地に置かない。白地の金は線と印だけ（濃い金 #92702c は灰の地でも 3:1 以上）
+   ===================================================================== */
+:root{--gd-paper-gold:#92702c;--gd-metal:linear-gradient(100deg,#ae904f 0%,#c4a45f 24%,#e2c982 43%,#b79a58 63%,#d9bd76 82%,#b99b59 100%)}
+
+/* --- 年表（濃紺）：中央そろえ・細い金線・菱形の節目、今は金の年と「現在」 --- */
+.kao-path .kao-years{border-left:0;margin-left:0}
+.kao-path .kao-years::before{left:calc(100%/12);right:calc(100%/12);top:auto;bottom:auto;height:1px;background:var(--gd-metal);top:var(--gd-line,90px)}
+.kao-path .kao-years li{display:block;text-align:center;padding:0 8px;position:relative}
+.kao-path .kao-years b{font-size:46px;letter-spacing:.02em;height:58px;display:flex;align-items:flex-end;justify-content:center}
+.kao-path .kao-now{display:block;height:20px;margin-top:4px;font-size:14px;letter-spacing:.16em;color:var(--gold-l)}
+.kao-path .kao-years li:not(.kao-cur)::after{content:"";display:block;height:0}
+.kao-path .kao-years li:not(.kao-cur) b{margin-bottom:24px}
+.kao-path .kao-years i{position:static;display:block;width:7px;height:7px;margin:5px auto 30px;transform:rotate(45deg);border-radius:0;background:var(--night);border:1px solid #d9bd76;box-shadow:none}
+.kao-path .kao-years li.kao-cur i{width:11px;height:11px;margin:3px auto 28px;background:var(--gd-metal);border-color:#e2c982;box-shadow:0 0 14px 3px rgba(217,185,104,.22)}
+.kao-path .kao-years li.kao-cur b{color:#e2c982}
+.kao-path .kao-years span{font-size:14px;line-height:1.9;color:#dbe2ec}
+.js .kao-path .kao-years::before{transform:scaleX(0);transform-origin:left;transition:transform 1.4s cubic-bezier(.2,.6,.3,1) .2s}
+.js .kao-path.in .kao-years::before{transform:none}
+@media (max-width:960px){
+  .kao-path .kao-years{padding-left:104px}
+  .kao-path .kao-years::before{left:92px;right:auto;top:14px;bottom:14px;width:1px;height:auto;background:linear-gradient(180deg,#ae904f,#e2c982 43%,#b79a58 63%,#d9bd76)}
+  .kao-path .kao-years li{display:block;text-align:left;min-height:84px;padding:0 0 22px 14px}
+  .kao-path .kao-years b{position:absolute;left:-104px;top:0;width:84px;height:auto;font-size:29px;justify-content:flex-start;margin:0}
+  .kao-path .kao-now{position:absolute;left:-104px;top:34px;height:auto;margin:0}
+  .kao-path .kao-years i{position:absolute;left:-16px;top:10px;margin:0}
+  .kao-path .kao-years li.kao-cur i{left:-18px;top:8px;margin:0}
+  .js .kao-path .kao-years::before{transform:scaleY(0);transform-origin:top}
+}
+
+/* --- 年表（トップ・薄い灰の帯）：同じ菱形と細い金線。白地なので濃い金 --- */
+.path::before{height:1px;background:var(--gd-metal);opacity:.9}
+.path .step i{width:9px;height:9px;border-radius:0;transform:rotate(45deg);border:1px solid var(--gd-paper-gold);background:var(--gray-1);box-shadow:none}
+.js .path .step i{transform:rotate(45deg) scale(0)}
+.js .path.in .step i{transform:rotate(45deg)}
+.path .step.kao-cur i,.path .step:last-child i{background:var(--gd-metal);border-color:var(--gd-paper-gold);box-shadow:0 0 12px 2px rgba(176,141,62,.25)}
+.js .path.in .step:last-child i{animation:none}
+.path .step.kao-cur .y{color:var(--gd-paper-gold)}
+.path .kao-now{display:block;font-size:14px;letter-spacing:.16em;color:var(--gd-paper-gold);margin:-2px 0 0}
+@media (max-width:960px){.path .kao-now{grid-column:2/-1}}
+
+/* --- 見出し：頭に短い金の一線 --- */
+.sec h2,.pg-sec h2{display:flex;align-items:center;gap:18px}
+.sec h2::before,.pg-sec h2::before{content:"";flex:none;width:32px;height:1px;background:var(--gd-paper-gold)}
+.band-dark h2::before,.band-blue h2::before{background:var(--gold-l)}
+.req h2{display:flex}
+
+/* --- ページの大きな見出し：縦の金の一線 --- */
+.kao-word-photo>div:first-child,.kao-bh,.kao-quiet .w{border-left:1px solid var(--gd-paper-gold);padding-left:24px}
+.kao-bh{padding-bottom:4px}
+
+/* --- 活動実績の月：開いた月の棒と下線を金に --- */
+.pg-fold[open] .pg-ticks i{background:var(--gd-paper-gold);opacity:1}
+.pg-fold[open]>summary{border-bottom:1px solid var(--gd-paper-gold)}
+
+/* --- ボタン：乗せた・選んだときに金の細い線 --- */
+.btn::after{content:"";position:absolute;left:28px;right:28px;bottom:9px;height:1px;background:var(--gold-l);opacity:0;transition:opacity .25s}
+.band-blue .btn::after{background:var(--gold-l)}
+.btn:hover::after,.btn:focus-visible::after{opacity:1}
+@media (prefers-reduced-motion:reduce){.btn::after{transition:none}.js .kao-path .kao-years::before{transition:none;transform:none}}
+/* 年表の金線：ページを開いたときに一度だけ伸びる（見張りの部品にたよらない） */
+.js .kao-path .kao-years::before,.js .kao-path.in .kao-years::before{transform:none;transition:none;animation:gd-draw 1.4s cubic-bezier(.2,.6,.3,1) .3s both}
+@keyframes gd-draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes gd-draw-v{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@media (max-width:960px){.js .kao-path .kao-years::before,.js .kao-path.in .kao-years::before{animation-name:gd-draw-v}}
+@media (prefers-reduced-motion:reduce){.js .kao-path .kao-years::before{animation:none}}
+.kao-path .kao-years li.kao-cur i{margin:1px auto 26px}
+/* トップの年表：「現在」は年の右に置き、菱形をどの年も同じ高さに */
+.path .step{position:relative}
+.path .kao-now{position:absolute;left:84px;top:10px;margin:0}
+@media (min-width:961px){.path .step i{position:relative;top:-9px;margin-bottom:9px}}
+@media (min-width:961px){.path .step i{top:-29px;margin-bottom:0}}
+@media (min-width:961px){
+  .path .step i{position:absolute;top:calc(62px - 5px);left:0;margin:0}
+  .path .step .y{margin-bottom:34px}
+}
+@media (min-width:961px){
+  .kao-path .kao-years{--gd-line:90px}
+  .kao-path .kao-years>li i,.kao-path .kao-years>li.kao-cur i{position:absolute;left:50%;margin:0;top:calc(var(--gd-line) - 4.5px);margin-left:-4.5px}
+  .kao-path .kao-years>li.kao-cur i{top:calc(var(--gd-line) - 6.5px);margin-left:-6.5px}
+  .kao-path .kao-years>li>span{display:block;margin-top:36px}
+}
+@media (min-width:961px){.kao-path .kao-years>li:not(.kao-cur) b{margin-bottom:0}.kao-path .kao-years>li:not(.kao-cur)>span{margin-top:60px}}
+.path .kao-now{color:var(--ai)}.path .step.kao-cur .y{color:#7a5c22}
