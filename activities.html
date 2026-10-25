@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Inter+Tight:wght@300;500;700&family=Shippori+Mincho+B1:wght@500;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=202610251644">
-<link rel="stylesheet" href="assets/css/pages.css?v=202610251644">
+<link rel="stylesheet" href="assets/css/style.css?v=202610251655">
+<link rel="stylesheet" href="assets/css/pages.css?v=202610251655">
 <script>if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&"IntersectionObserver" in window)document.documentElement.classList.add("js")</script>
 </head>
 <body>
@@ -91,11 +91,11 @@
 
 <section class="sec"><div class="w">
   <h2>一覧</h2>
-  <form class="pg-filter" id="pg-filter" onsubmit="return false">
-    <fieldset><legend>種類でしぼる</legend><div id="pg-kinds" style="display:flex;flex-wrap:wrap;gap:8px"></div></fieldset>
-    <div><label for="pg-pref">都道府県</label><select id="pg-pref"><option value="">すべて</option></select></div>
+  <form class="pg-filter ft-bar" id="pg-filter" onsubmit="return false">
+    <fieldset class="ft-group"><legend>種類でしぼる</legend><div id="pg-kinds" class="ft-choices"></div></fieldset>
+    <div class="ft-prefecture"><label for="pg-pref">都道府県</label><div class="ft-select-wrap"><select id="pg-pref" class="ft-select"><option value="">すべて</option></select></div></div>
   </form>
-  <p class="pg-count" id="pg-count" aria-live="polite"></p>
+  <p class="pg-count ft-result" id="pg-count" role="status" aria-live="polite" aria-atomic="true"></p>
   <div id="pg-list"><p class="pg-msg">記録を読みこんでいます。</p></div>
   <noscript><p class="pg-msg">一覧を出すには JavaScript を有効にしてください。</p></noscript>
 </div></section>
@@ -129,9 +129,9 @@
 </footer>
 
 <a class="tab" href="request.html">講演・研修のご依頼</a>
-<script src="assets/js/motion.js?v=202610251644"></script>
-<script src="assets/js/data.js?v=202610251644"></script>
-<script src="assets/js/activities.js?v=202610251644"></script>
-<script src="assets/js/render.js?v=202610251644"></script>
+<script src="assets/js/motion.js?v=202610251655"></script>
+<script src="assets/js/data.js?v=202610251655"></script>
+<script src="assets/js/activities.js?v=202610251655"></script>
+<script src="assets/js/render.js?v=202610251655"></script>
 </body>
 </html>

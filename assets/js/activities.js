@@ -54,6 +54,15 @@
     }).join('');
   }
 
+  // しぼりこみのボタン（すべて＋種類ごと。多い順。回数を添える）
+  function kindsHTML(byType, total) {
+    var kinds = Object.keys(byType).sort(function (a, b) { return byType[b] - byType[a]; });
+    return [''].concat(kinds).map(function (k) {
+      return '<button type="button" class="ft-choice" data-kind="' + esc(k) + '" aria-pressed="' + (k === '') + '">' +
+        '<span class="ft-name">' + (k ? esc(k) : 'すべて') + '</span><span class="ft-number">' + (k ? byType[k] : total) + '</span></button>';
+    }).join('');
+  }
+
   // ---- ここから下はブラウザだけ ----
   function start() {
     var D = root.TokkatsuData, $ = function (id) { return document.getElementById(id); };
@@ -61,7 +70,7 @@
 
     function draw() {
       var hit = pick(all, state);
-      $('pg-count').textContent = hit.length + '件';
+      $('pg-count').innerHTML = '<span class="ft-total">' + hit.length + '</span>件';
       $('pg-list').innerHTML = hit.length ? monthsHTML(byMonth(hit), !!(state.kind || state.pref))
         : '<p class="pg-msg">あてはまる記録はありません。</p>';
     }
@@ -75,9 +84,7 @@
         return '<li><span>' + esc(k) + '</span><span class="pg-bar"><i style="--w:' + (s.byType[k] / max * 100).toFixed(1) +
           '%"></i></span><span class="pg-bv">' + s.byType[k] + '回</span></li>';
       }).join('');
-      $('pg-kinds').innerHTML = [''].concat(kinds).map(function (k) {
-        return '<button type="button" data-kind="' + esc(k) + '" aria-pressed="' + (k === '' ) + '">' + (k ? esc(k) : 'すべて') + '</button>';
-      }).join('');
+      $('pg-kinds').innerHTML = kindsHTML(s.byType, s.total);
       $('pg-kinds').addEventListener('click', function (e) {
         var b = e.target.closest('button'); if (!b) return;
         state.kind = b.getAttribute('data-kind');
@@ -93,7 +100,7 @@
     });
   }
 
-  var api = { esc: esc, pick: pick, byMonth: byMonth, dateText: dateText, prefOptions: prefOptions, monthsHTML: monthsHTML };
+  var api = { esc: esc, pick: pick, byMonth: byMonth, dateText: dateText, prefOptions: prefOptions, monthsHTML: monthsHTML, kindsHTML: kindsHTML };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else if (document.getElementById('pg-list')) start();
 })(this);

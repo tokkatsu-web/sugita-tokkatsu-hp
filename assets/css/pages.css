@@ -496,3 +496,34 @@
 }
 @media (min-width:961px){.kao-path .kao-years>li:not(.kao-cur) b{margin-bottom:0}.kao-path .kao-years>li:not(.kao-cur)>span{margin-top:60px}}
 .path .kao-now{color:var(--ai)}.path .step.kao-cur .y{color:#7a5c22}
+
+/* ===== 活動実績のしぼりこみ（Codex の見本 _mihon_filter_v1 の案A。2026-10-25） ===== */
+.pg-filter.ft-bar{display:flex;flex-wrap:wrap;align-items:flex-end;gap:24px 28px;min-width:0;background:#fff;border:0;padding:0;margin:0 0 8px}
+.ft-group{flex:1 1 780px;min-width:0;margin:0;padding:0;border:0}
+.ft-group legend{display:block;margin:0 0 12px;padding:0;font-size:14px;color:var(--gray-4)}
+.ft-group legend::before{content:"";display:inline-block;width:24px;height:1px;margin-right:10px;vertical-align:middle;background:var(--gd-paper-gold)}
+.ft-choices{display:flex!important;flex-wrap:wrap;gap:4px 0!important;min-width:0}
+.pg-filter .ft-choice{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:48px;min-width:0;margin:0;padding:10px 12px;border:1px solid var(--gray-4);border-radius:0;background:#fff;color:var(--sumi);font-family:var(--goth);font-size:14px;line-height:1.6;cursor:pointer;transition:background-color .14s,color .14s}
+.pg-filter .ft-choice+.ft-choice{margin-left:-1px}
+.pg-filter .ft-choice::before{content:"";display:block;flex:0 0 6px;width:6px;height:6px;background:currentColor;visibility:hidden}
+.pg-filter .ft-choice[aria-pressed="true"]::before{content:"";visibility:visible}
+.pg-filter .ft-choice:hover{background:var(--gray-1)}
+.pg-filter .ft-choice[aria-pressed="true"]{background:var(--night);border-color:var(--night);color:#fff;z-index:1}
+.ft-name{overflow-wrap:anywhere}
+.ft-number{flex-shrink:0;font-family:var(--latin);font-size:14px;font-weight:500;font-variant-numeric:tabular-nums;line-height:1.2}
+.ft-prefecture{flex:0 1 168px;min-width:0}
+.ft-prefecture label{display:block;margin:0 0 12px;font-size:14px;color:var(--gray-4)}
+.ft-select-wrap{position:relative}
+.ft-select-wrap::after{content:"";position:absolute;right:15px;top:21px;border-left:4px solid transparent;border-right:4px solid transparent;border-top:6px solid var(--night);pointer-events:none}
+.pg-filter .ft-select{display:block;appearance:none;-webkit-appearance:none;width:100%;height:48px;margin:0;padding:0 38px 0 14px;border:1px solid var(--gray-4);border-radius:0;background:#fff;color:var(--sumi);font-family:var(--goth);font-size:16px;cursor:pointer}
+.pg-filter .ft-choice:focus-visible,.pg-filter .ft-select:focus-visible{outline:3px solid var(--cobalt);outline-offset:4px;z-index:2}
+.pg-count.ft-result{margin:24px 0 8px;padding:18px 0 0;border-top:1px solid var(--line);font-size:14px;color:var(--gray-4)}
+.ft-total{font-family:var(--latin);font-size:22px;font-weight:500;color:var(--night);font-variant-numeric:tabular-nums;margin-right:2px}
+@media (max-width:600px){
+  .ft-group,.ft-prefecture{flex-basis:100%}
+  .ft-choices{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px!important}
+  .pg-filter .ft-choice+.ft-choice{margin-left:0}
+  .pg-filter .ft-choice{justify-content:flex-start;padding:10px 8px;gap:5px}
+}
+@media (prefers-reduced-motion:reduce){.pg-filter .ft-choice{transition:none}}
+@media (forced-colors:active){.pg-filter .ft-choice[aria-pressed="true"]{outline:2px solid Highlight;outline-offset:-3px}.pg-filter .ft-select{appearance:auto}.ft-select-wrap::after{display:none}}
