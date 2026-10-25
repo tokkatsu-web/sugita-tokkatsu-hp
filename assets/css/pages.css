@@ -305,3 +305,16 @@
 .pg-shelf .pg-vol{top:auto;bottom:8px}
 .kao-books{padding-bottom:16px}
 .pg-books-sec{padding-top:48px}
+
+/* ===== 表紙の画像がない本：書名を縦書きにした「本らしい表紙」（写真が届くまで） ===== */
+.pg-nofig .fb{background:var(--pg-bg,#0f1b2d);border-top:0;padding:16px 14px 14px;flex-direction:row-reverse;justify-content:space-between;align-items:stretch}
+.pg-nofig .fb::before{content:"";position:absolute;left:12px;top:0;bottom:0;width:1px;background:var(--gold-l);opacity:.7}
+.pg-nofig .fb b{writing-mode:vertical-rl;font-family:var(--mincho);font-weight:800;font-size:19px;line-height:1.5;letter-spacing:.12em;color:#fff;max-height:100%;overflow:hidden}
+.pg-nofig .fb small{writing-mode:vertical-rl;align-self:flex-end;font-size:14px;letter-spacing:.2em;color:var(--pg-sub,#cfd9e6);margin-left:16px}
+.pg-nofig .fb::after{content:"";position:absolute;right:14px;bottom:14px;width:10px;height:10px;background:var(--gold-l)}
+.pg-t1{--pg-bg:#0f1b2d}
+.pg-t2{--pg-bg:#1b4d7a}
+.pg-t3{--pg-bg:#163a94}
+.pg-nofig .pg-vol{background:var(--gold-l);color:#0f1b2d;left:24px;right:auto;bottom:10px}
+.pg-nofig .fb small:only-child{margin:0}
+.pg-nofig .pg-vol{top:10px;bottom:auto}
